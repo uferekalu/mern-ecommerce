@@ -7,6 +7,8 @@ const connectDB = require('./config/db.js')
 
 // User routes
 const userRoutes = require('./routes/userRoutes.js')
+// Product routes
+const productRoutes = require('./routes/productRoutes.js')
 
 dotenv.config()
 
@@ -22,6 +24,8 @@ app.use(express.json())
 
 // Users API
 app.use('/api/users', userRoutes)
+// Product API
+app.use('/api/products', productRoutes)
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 

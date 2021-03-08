@@ -5,6 +5,9 @@ const morgan = require('morgan')
 const colors = require('colors')
 const connectDB = require('./config/db.js')
 
+// User routes
+const userRoutes = require('./routes/userRoutes.js')
+
 dotenv.config()
 
 connectDB()
@@ -16,6 +19,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use(express.json())
+
+// Users API
+app.use('/api/users', userRoutes)
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 

@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const morgan = require('morgan')
 const colors = require('colors')
 const connectDB = require('./config/db.js')
+const { notFound, errorHandler } = require('./middleware/errorMiddleware.js')
 
 // User routes
 const userRoutes = require('./routes/userRoutes.js')
@@ -11,6 +12,8 @@ const userRoutes = require('./routes/userRoutes.js')
 const productRoutes = require('./routes/productRoutes.js')
 // Order routes
 const orderRoutes = require('./routes/orderRoutes.js')
+// Upload routes
+const uploadRoutes = require('./routes/uploadRoutes.js')
 
 dotenv.config()
 
@@ -30,6 +33,8 @@ app.use('/api/users', userRoutes)
 app.use('/api/products', productRoutes)
 // Order API
 app.use('/api/orders', orderRoutes)
+// Upload API
+app.use('/api/upload', uploadRoutes)
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
@@ -44,6 +49,9 @@ if (process.env.NODE_ENV ==='production') {
         res.send('API is running...')
     })
 }
+
+app.use(notFound)
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000
 

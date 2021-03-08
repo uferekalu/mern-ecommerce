@@ -9,6 +9,8 @@ const connectDB = require('./config/db.js')
 const userRoutes = require('./routes/userRoutes.js')
 // Product routes
 const productRoutes = require('./routes/productRoutes.js')
+// Order routes
+const orderRoutes = require('./routes/orderRoutes.js')
 
 dotenv.config()
 
@@ -26,6 +28,8 @@ app.use(express.json())
 app.use('/api/users', userRoutes)
 // Product API
 app.use('/api/products', productRoutes)
+// Order API
+app.use('/api/orders', orderRoutes)
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 

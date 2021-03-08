@@ -1,0 +1,58 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\kalu\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add nodemon
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\nodejs\;C:\Users\kalu;C:\ProgramData\ComposerSetup\bin;C:\Program Files\Git\cmd;mongodb-shell-windows-x86_64-4.4.2.zip\mongodb-win32-x86_64-windows-4.4.2 - ZIP archive;C:\Users\kalu\AppData\Local\Programs\Python\Python36-32\Scripts\;C:\Users\kalu\AppData\Local\Programs\Python\Python36-32\;C:\Users\kalu\Desktop\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\kalu\AppData\Roaming\npm;C:\Program Files\JetBrains\PyCharm 2020.1\bin;C:\Users\kalu\AppData\Local\GitHubDesktop\bin;C:\Users\kalu\AppData\Roaming\Composer\vendor\bin;C:\xampp\php
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.16.2
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: 8732:error:1408F119:SSL routines:ssl3_get_record:decryption failed or bad record mac:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:677:
+
+npm manifest: 
+  {
+    "name": "mern-ecommerce",
+    "version": "1.0.0",
+    "description": "\"Ecommerce App\"",
+    "main": "server.js",
+    "scripts": {
+      "start": "node backend/server",
+      "server": "nodemon backend/server"
+    },
+    "keywords": [
+      "node",
+      "mongoose",
+      "express",
+      "mongodb"
+    ],
+    "author": "ufere kalu",
+    "license": "ISC",
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "colors": "^1.4.0",
+      "concurrently": "^6.0.0",
+      "config": "^3.3.4",
+      "cookie-parser": "^1.4.5",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-async-handler": "^1.1.4",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^5.11.19",
+      "morgan": "^1.10.0",
+      "multer": "^1.4.2",
+      "validator": "^13.5.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

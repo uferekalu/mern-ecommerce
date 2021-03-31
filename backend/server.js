@@ -1,19 +1,21 @@
 const path = require('path')
 const express = require('express')
+const cors = require('cors');
 const dotenv = require('dotenv')
 const morgan = require('morgan')
 const colors = require('colors')
 const connectDB = require('./config/db.js')
 const { notFound, errorHandler } = require('./middleware/errorMiddleware.js')
 
+
 // User routes
 const userRoutes = require('./routes/userRoutes.js')
 // Product routes
 const productRoutes = require('./routes/productRoutes.js')
 // Order routes
-const orderRoutes = require('./routes/orderRoutes.js')
+const orderRoutes = require('./routes/orderRoutes.js') 
 // Upload routes
-const uploadRoutes = require('./routes/uploadRoutes.js')
+const uploadRoutes = require('./routes/uploadRoutes.js') 
 
 dotenv.config()
 
@@ -52,6 +54,13 @@ if (process.env.NODE_ENV ==='production') {
 
 app.use(notFound)
 app.use(errorHandler)
+
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 5000
 

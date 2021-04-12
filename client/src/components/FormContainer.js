@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     },
     marginCont: {
         marginTop: '4rem',
-        backgroundColor: 'pink',
         marginBottom: '4rem'
     }
 }));

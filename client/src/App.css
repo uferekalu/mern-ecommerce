@@ -1,3 +1,13 @@
 body {
-  background-color: pink;
+  background-color: silver;
+}
+.Example {
+  max-width: 600px;
+  margin: auto
+}
+
+@media (max-width: 741px) {
+  .makeStyles-title-3 {
+    display: none;
+  }
 }
